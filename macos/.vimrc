@@ -1,11 +1,13 @@
 syntax on
-
+set number
 colorscheme gruvbox
 
 set background=dark
 set tabstop=2
 set shiftwidth=2
 set expandtab
+nnoremap Q q
+nnoremap q <Nop>
 
 call plug#begin('~/.vim/plugged')
 Plug 'zah/nim.vim'
