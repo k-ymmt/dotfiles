@@ -1,5 +1,4 @@
 syntax on
-set number
 colorscheme gruvbox
 
 set background=dark
