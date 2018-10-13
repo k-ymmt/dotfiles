@@ -1,27 +1,14 @@
-syntax on
 colorscheme gruvbox
-
 set background=dark
+set clipboard+=unnamed
+set expandtab
 set tabstop=2
 set shiftwidth=2
-set expandtab
-nnoremap Q q
+set softtabstop=2
+set mouse=a
+
+tnoremap <silent> <ESC> <C-\><C-n>
+
 nnoremap q <Nop>
 
-call plug#begin('~/.vim/plugged')
-Plug 'zah/nim.vim'
-call plug#end()
-
-fun! JumpToDef()
-  if exists("*GotoDefinition_" . &filetype)
-    call GotoDefinition_{&filetype}()
-  else
-    exe "norm! \<C-]>"
-  endif
-endf
-
-" Jump to tag
-nn <M-g> :call JumpToDef()<cr>
-ino <M-g> <esc>:call JumpToDef()<cr>i
-
-set backspace=indent,eol,start
+syntax on

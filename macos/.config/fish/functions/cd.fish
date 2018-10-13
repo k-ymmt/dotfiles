@@ -58,6 +58,6 @@ function cd
       commandline ''
     end
   else
-_builtin_cd $argv
+    _builtin_cd $argv
   end
 end

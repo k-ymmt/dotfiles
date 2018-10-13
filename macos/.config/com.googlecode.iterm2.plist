@@ -174,7 +174,7 @@
 	<key>NSNavLastRootDirectory</key>
 	<string>~/.config</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
-	<string>{712, 448}</string>
+	<string>{720, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -183,6 +183,11 @@
 	<false/>
 	<key>NSScrollViewShouldScrollUnderTitlebar</key>
 	<false/>
+	<key>NSSplitView Subview Frames NSColorPanelSplitView</key>
+	<array>
+		<string>0.000000, 0.000000, 224.000000, 263.000000, NO, NO</string>
+		<string>0.000000, 264.000000, 224.000000, 43.000000, NO, NO</string>
+	</array>
 	<key>NSTableView Columns v2 KeyBingingTable</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGNjdYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
@@ -206,22 +211,21 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
-	<key>NSWindow Frame NSFontPanel</key>
-	<string>550 322 445 103 0 0 1440 878 </string>
+	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
+	<dict>
+		<key>TB Is Shown</key>
+		<integer>1</integer>
+	</dict>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>530 477 620 392 0 0 1680 1028 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>504 252 918 452 0 0 1440 878 </string>
+	<string>485 439 928 394 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>74 214 990 552 0 0 1440 878 </string>
+	<string>109 0 1571 1028 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>176 131 570 379 0 0 1440 878 </string>
+	<string>-126 1050 1920 1058 -126 1050 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>197 48 570 379 0 0 1440 878 </string>
-	<key>NSWindow Frame iTerm Window 3</key>
-	<string>218 25 570 379 0 0 1440 878 </string>
-	<key>NSWindow Frame iTerm Window 4</key>
-	<string>239 2 570 379 0 0 1440 878 </string>
-	<key>NSWindow Frame iTerm Window 5</key>
-	<string>260 445 570 379 0 0 1440 878 </string>
+	<string>100 1180 585 452 -126 1050 1920 1058 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -446,13 +450,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.15686274509803921</real>
+				<real>0.15686275064945221</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.15686274509803921</real>
+				<real>0.15686275064945221</real>
 				<key>Red Component</key>
-				<real>0.15686274509803921</real>
+				<real>0.15686275064945221</real>
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
@@ -514,7 +518,7 @@
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
-			<string>No</string>
+			<string>Recycle</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Description</key>
@@ -1510,14 +1514,26 @@
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>C0A1D332-4596-4B6B-A719-9A0BA643764C</string>
-	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<string>C621049E-2F98-44C0-8D19-738281ED2EE0</string>
+	<key>NoSyncLastTipTime</key>
+	<real>548321442.22347796</real>
+	<key>NoSyncPermissionToShowTip</key>
 	<true/>
-	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
-	<integer>0</integer>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>547834344.38821101</real>
+	<real>547605697.70058501</real>
+	<key>NoSyncTipsDisabled</key>
+	<true/>
+	<key>NoSyncTipsToNotShow</key>
+	<array>
+		<string>000</string>
+		<string>0000</string>
+		<string>0001</string>
+		<string>0002</string>
+		<string>0003</string>
+	</array>
 	<key>OnlyWhenMoreTabs</key>
+	<false/>
+	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
 	<key>PointerActions</key>
 	<dict>
@@ -1553,7 +1569,9 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/KazukiYamamoto/.config</string>
+	<string>/Users/kyamamoto/.config</string>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>SUEnableAutomaticChecks</key>
@@ -1561,11 +1579,11 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final.xml?shard=78</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=77</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-05-12T16:12:26Z</date>
+	<date>2018-09-28T06:58:11Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -1586,17 +1604,26 @@
 	<integer>3</integer>
 	<key>TabViewType</key>
 	<integer>0</integer>
+	<key>ToolbeltTools</key>
+	<array>
+		<string>Profiles</string>
+		<string>Paste History</string>
+	</array>
 	<key>UseBorder</key>
 	<false/>
 	<key>WindowNumber</key>
 	<false/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.1.6</string>
+	<string>3.2.0</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
 	<false/>
+	<key>kCPKUseSystemColorPicker</key>
+	<true/>
 </dict>
 </plist>

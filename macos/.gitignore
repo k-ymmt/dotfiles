@@ -1,0 +1,9 @@
+.mono/
+configstore/
+fish/fishd.*
+gcloud/
+NuGet/
+stetic/
+xbuild/
+yarn/
+csharp.history
