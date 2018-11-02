@@ -1,6 +1,13 @@
 set -x ANDROID_HOME $HOME/Library/Android/sdk
-set -x PATH $PATH $HOME/bin/flutter/bin (pyenv root)/shims $ANDROID_HOME/tools/bin $ANDROID_HOME/platform-tools
+
+set -x KONAN_HOME $HOME/bin/kotlin-native
+set -x KONAN_USER_DIR $HOME/.konan
+set -x KONAN_DEPS $KONAN_USER_DIR/dependencies
+
+set -x PATH $PATH $HOME/bin/flutter/bin (pyenv root)/shims $ANDROID_HOME/tools/bin $ANDROID_HOME/platform-tools $KONAN_HOME/bin
 set -x GOPATH $HOME/Projects/go
+
+source $HOME/.cargo/env
 
 . (pyenv init - | psub)
 
