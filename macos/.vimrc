@@ -16,7 +16,7 @@ nnoremap q <Nop>
 
 syntax on
 
-let g:airline_theme = 'papercolor'
+let g:airline_theme = 'zenburn'
 let g:airline#extensions#tabline#enabled = 1
 
 if &compatible
