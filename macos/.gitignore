@@ -7,3 +7,4 @@ stetic/
 xbuild/
 yarn/
 csharp.history
+.vim/.netrwhist
