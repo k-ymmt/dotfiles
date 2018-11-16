@@ -1,5 +1,5 @@
 function fzf_select_history
-    history|fzf --exit-0 --select-1 --query (commandline) |read slct
+    history |fzf --exit-0 --select-1 --no-sort +m --query (commandline) |read slct
   if [ $slct ]
     commandline $slct
   end
