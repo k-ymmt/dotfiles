@@ -24,6 +24,6 @@ alias ls="ls -a"
 alias vim="nvim"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/kyamamoto/bin/google-cloud-sdk/path.fish.inc' ]; . '/Users/kyamamoto/bin/google-cloud-sdk/path.fish.inc'; end
+if [ -f '$HOME/bin/google-cloud-sdk/path.fish.inc' ]; . '$HOME/bin/google-cloud-sdk/path.fish.inc'; end
 
 if [ -z $TMUX ];and [ $SHLVL -eq 1 ];tmux attach;or tmux; end
