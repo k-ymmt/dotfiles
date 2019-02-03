@@ -26,4 +26,31 @@ alias vim="nvim"
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '$HOME/bin/google-cloud-sdk/path.fish.inc' ]; . '$HOME/bin/google-cloud-sdk/path.fish.inc'; end
 
+
 if [ -z $TMUX ];and [ $SHLVL -eq 1 ];tmux attach;or tmux; end
+
+# JetBrains IDEs shortcut
+function rubymine
+  open -a RubyMine.app $argv
+end
+
+function rider
+  open -a Rider.app $argv
+end
+
+function appcode
+  open -a AppCode.app $argv
+end
+
+function goland
+  open -a GoLand.app $argv
+end
+
+function pycharm
+  open -a PyCharm.app $argv
+end
+
+function webstorm
+  open -a WebStorm.app $argv
+end
+
