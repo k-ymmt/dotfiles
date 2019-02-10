@@ -21,6 +21,7 @@ alias q="exit"
 alias r="ranger"
 
 alias ls="ls -a"
+alias tmux="tmux -u"
 alias vim="nvim"
 
 # The next line updates PATH for the Google Cloud SDK.
