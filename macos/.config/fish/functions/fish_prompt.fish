@@ -2,7 +2,7 @@
 function fish_prompt
     echo \n
 
-    if test (string length (pwd)) -le 70
+    if test (string length (pwd)) -le (math $COLUMNS - 10)
 	set p (pwd)
     else
 	set p (prompt_pwd)
