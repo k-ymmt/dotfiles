@@ -1,12 +1,8 @@
 
 function fish_prompt
-    echo \n
+  echo \n
+  set p (test (string length (pwd)) -le (math $COLUMNS - 10) && pwd || prompt_pwd)
 
-    if test (string length (pwd)) -le (math $COLUMNS - 10)
-	set p (pwd)
-    else
-	set p (prompt_pwd)
-    end
-    echo (set_color white)(logname)':'(set_color yellow)"$p"
-    echo (set_color blue)'>'(set_color green)
+  echo (set_color white)(logname)':'(set_color yellow)"$p"
+  echo (set_color blue)'>'(set_color green)
 end
