@@ -17,6 +17,8 @@ function fish_user_key_bindings
   bind \cr 'h'
 end
 
+set -x EDITOR nvim
+
 alias q="exit"
 alias r="ranger"
 
