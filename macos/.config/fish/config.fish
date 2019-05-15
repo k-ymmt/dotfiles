@@ -7,6 +7,9 @@ set -x KONAN_DEPS $KONAN_USER_DIR/dependencies
 set -x GOPATH $HOME/Projects/go
 set -x PATH $PATH $HOME/bin/flutter/bin (pyenv root)/shims $ANDROID_HOME/tools/bin $ANDROID_HOME/platform-tools $KONAN_HOME/bin $GOPATH/bin
 
+set -x LC_ALL en_US.UTF-8
+set -x LANG en_US.UTF-8
+
 source $HOME/.cargo/env
 
 . (pyenv init - | psub)
