@@ -1,18 +1,38 @@
-set -x ANDROID_HOME $HOME/Library/Android/sdk
+function set_env
+  set -x ANDROID_HOME $HOME/Library/Android/sdk
+  set -x KONAN_HOME $HOME/bin/kotlin-native
+  set -x KONAN_USER_DIR $HOME/.konan
+  set -x KONAN_DEPS $KONAN_USER_DIR/dependencies
+  set -x GOPATH $HOME/Projects/go
+  if [ -d $HOME/bin/flutter/bin ]
+    set -x PATH $PATH $HOME/bin/flutter/bin 
+  end
 
-set -x KONAN_HOME $HOME/bin/kotlin-native
-set -x KONAN_USER_DIR $HOME/.konan
-set -x KONAN_DEPS $KONAN_USER_DIR/dependencies
+  if [ (which pyenv) ] && [ -d (pyenv root)/shims ]
+    . (pyenv init - | psub)
+    set -x PATH $PATH (pyenv root)/shims
+  end
+  if [ -d $ANDROID_HOME/tools/bin ] && [ -d $ANDROID_HOME/platform-tools ]
+    set -x PATH $PATH $ANDROID_HOME/tools/bin
+    set -x PATH $PATH $ANDROID_HOME/platform-tools
+  end
+  if [ -d $KONAN_HOME/bin ]
+    set -x PATH $PATH $KONAN_HOME/bin
+  end
+  if [ -d $GOPATH/bin ]
+    set -x PATH $PATH $GOPATH/bin
+  end
+  if [ -d $HOME/.cargo/env ]
+    source $HOME/.cargo/env
+  end
+  if [ (which direnv) ]
+    direnv hook fish | source
+  end
+end
 
-set -x GOPATH $HOME/Projects/go
-set -x PATH $PATH $HOME/bin/flutter/bin (pyenv root)/shims $ANDROID_HOME/tools/bin $ANDROID_HOME/platform-tools $KONAN_HOME/bin $GOPATH/bin
 
 set -x LC_ALL en_US.UTF-8
 set -x LANG en_US.UTF-8
-
-source $HOME/.cargo/env
-
-. (pyenv init - | psub)
 
 set -x FZF_DEFAULT_OPTS "--height 20%"
 
