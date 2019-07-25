@@ -9,7 +9,7 @@ SAVEHIST=100000
 
 autoload -Uz colors; colors
 autoload -Uz compinit; compinit
-autoload -Uz select-word-style
+autoload -Uz select-word-style; select-word-style bash
 
 PROMPT="
 %{${fg[blue]}%}%n%{${reset_color}%}:%{$fg[green]%}%~%{$reset_color%}
@@ -42,7 +42,6 @@ zstyle ':completion:*' menu select
 zstyle ':completion::complete:*' use-cache true
 zstyle ':completion:*' list-colors "${LS_COLORS}"
 
-select-word-style bash
 
 if [ ! -d ~/.zplug ];then
   git clone https://github.com/zplug/zplug ~/.zplug
@@ -69,7 +68,7 @@ export ENHANCD_FILTER=fzf
 
 bindkey '^r' history-incremental-pattern-search-backward
 function select-history() {
-  BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
+  BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt="> ")
   CURSOR=$#BUFFER
 }
 
