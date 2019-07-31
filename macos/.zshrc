@@ -9,7 +9,7 @@ export GOPATH=$HOME/Projects/go
 if [ -d $HOME/bin/flutter/bin ];then
   export PATH=$PATH:$HOME/bin/flutter/bin
 fi
-if [ $(which pyenv) ] && [ -d $(pyenv root)/shims ];then
+if which pyenv >/dev/null 2 &>1 && [ -d $(pyenv root)/shims ];then
   eval "$(pyenv init -)"
   export PATH=$PATH:$(pyenv root)/shims
 fi
@@ -19,7 +19,7 @@ fi
 if [ -d $GOPATH/bin ];then
   export PATH=$PATH:$GOPATH/bin
 fi
-if [ -d $HOME/.cargo/env ];then
+if [ -f $HOME/.cargo/env ];then
   source $HOME/.cargo/env
 fi
 if [ $(which direnv) ];then
