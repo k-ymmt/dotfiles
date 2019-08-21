@@ -22,6 +22,9 @@ fi
 if [ -f $HOME/.cargo/env ];then
   source $HOME/.cargo/env
 fi
+if [ -d $PATH/bin ];then
+  PATH=$PATH:$PATH/bin
+fi
 if [ $(which direnv) ];then
   eval "$(direnv hook zsh)"
 fi
