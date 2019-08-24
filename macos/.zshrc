@@ -68,6 +68,8 @@ zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
 zstyle ':completion:*' menu select
 zstyle ':completion::complete:*' use-cache true
 zstyle ':completion:*' list-colors "${LS_COLORS}"
+zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
+
 
 # ===Set Utilities===
 autoload -Uz select-word-style; select-word-style bash
