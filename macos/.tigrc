@@ -1,0 +1,27 @@
+set line-graphics = utf-8
+set ignore-case = true
+set diff-options = -m --first-parent
+set mouse = true
+set diff-highlight = true
+
+bind generic g move-first-line
+
+bind generic G move-last-line
+bind main G move-last-line
+
+bind generic <Ctrl-d> move-down
+bind generic <Ctrl-b> move-up
+
+bind generic R refresh
+
+bind generic F !git fetch %(remote)
+bind main F !git fetch %(remote)
+
+bind generic L ?git pull %(remote)
+
+bind generic P ?git push -u %(remote) %(repo:head)
+
+bind generic S ?git stash
+
+bind main B ?git switch -c "%(prompt Enter branch name: )" %(branch)
+bind refs B ?git switch -c "%(prompt Enter branch name: )" %(branch)

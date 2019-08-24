@@ -12,3 +12,4 @@ link_home .zshrc
 link_home .vim
 link_home .vimrc
 link_home .gitignore_global
+link_home .tigrc
