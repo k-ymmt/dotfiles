@@ -9,7 +9,7 @@ export GOPATH=$HOME/Projects/go
 if [ -d $HOME/bin/flutter/bin ];then
   export PATH=$PATH:$HOME/bin/flutter/bin
 fi
-if which pyenv >/dev/null 2 >&1 && [ -d $(pyenv root)/shims ];then
+if type pyenv >/dev/null 2 >&1 && [ -d $(pyenv root)/shims ];then
   eval "$(pyenv init -)"
   export PATH=$PATH:$(pyenv root)/shims
 fi
@@ -25,8 +25,13 @@ fi
 if [ -d $HOME/bin ];then
   PATH=$PATH:$HOME/bin
 fi
-if [ which direnv >/dev/null 2>&1 ];then
+if type direnv >/dev/null 2>&1;then
   eval "$(direnv hook zsh)"
+fi
+if type nodenv >/dev/null 2>&1;then
+  eval "$(nodenv init -)"
+else
+  echo foo
 fi
 
 # ===Set History====
