@@ -9,8 +9,8 @@ bind generic g move-first-line
 bind generic G move-last-line
 bind main G move-last-line
 
-bind generic <Ctrl-d> move-down
-bind generic <Ctrl-b> move-up
+# bind generic <Ctrl-d> move-down
+bind generic <Ctrl-b> move-page-up
 
 bind generic R refresh
 
