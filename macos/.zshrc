@@ -30,8 +30,12 @@ if type direnv >/dev/null 2>&1;then
 fi
 if type nodenv >/dev/null 2>&1;then
   eval "$(nodenv init -)"
-else
-  echo foo
+fi
+
+export NVM_DIR="$HOME/.nvm"
+if [ -d $NVM_DIR ];then
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 
 # ===Set History====
