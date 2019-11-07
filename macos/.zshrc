@@ -52,8 +52,11 @@ setopt hist_verify
 setopt hist_save_no_dups
 
 function select-history() {
-  BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt="> ")
-  CURSOR=$#BUFFER
+  buffer=$(history -n -r 1 | fzf --exit-0 --no-sort +m --query "$LBUFFER" --prompt="> ")
+  if [ -z "$buffer" ];then
+    return
+  fi
+  CURSOR=$#buffer
 }
 
 zle -N select-history
