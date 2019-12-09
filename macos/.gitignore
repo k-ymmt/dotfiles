@@ -13,3 +13,6 @@ Microsoft\\VisualStudio Services/
 .config/karabiner/automatic_backups/
 
 .config/fish/fish_variables
+
+.config/direnv/allow/
+.config/grv/
