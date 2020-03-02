@@ -9,7 +9,7 @@ export GOPATH=$HOME/Projects/go
 if [ -d $HOME/bin/flutter/bin ];then
   export PATH=$PATH:$HOME/bin/flutter/bin
 fi
-if type pyenv >/dev/null 2 >&1 && [ -d $(pyenv root)/shims ];then
+if type pyenv >/dev/null 2>&1 && [ -d $(pyenv root)/shims ];then
   eval "$(pyenv init -)"
   export PATH=$PATH:$(pyenv root)/shims
 fi
@@ -51,16 +51,14 @@ setopt inc_append_history
 setopt hist_verify
 setopt hist_save_no_dups
 
-function select-history() {
-  buffer=$(history -n -r 1 | fzf --exit-0 --no-sort +m --query "$LBUFFER" --prompt="> ")
-  if [ -z "$buffer" ];then
-    return
-  fi
-  CURSOR=$#buffer
+function fh() {
+  buffer=$( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf --exit-0 --no-sort --query "$LBUFFER" +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
+
+  print -z $buffer
 }
 
-zle -N select-history
-bindkey '^r' select-history
+zle -N fh
+bindkey '^r' fh
 
 # ===Set Prompt===
 autoload -Uz colors; colors
@@ -129,7 +127,7 @@ function gr() {
     return
   fi
 
-  ghq look $repo_name
+  cd "$(ghq root)/$repo_name"
 }
 
 
