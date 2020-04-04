@@ -5,5 +5,5 @@ function gr
     return
   end
 
-  ghq look $repo_name
+  cd (ghq root)/$repo_name
 end
