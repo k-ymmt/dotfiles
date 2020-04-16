@@ -143,22 +143,3 @@ alias r='ranger'
 alias vim='nvim'
 alias q='exit'
 alias ls='ls -a'
-
-jbt_path="${HOME}/Applications/JetBrains Toolbox"
-
-
-if [ -d "${jbt_path}/WebStorm.app" ];then
-  function webstorm() {
-    "${jbt_path}/WebStorm.app/Contents/MacOS/jetbrains-toolbox-launcher" "$(builtin cd "$1"; pwd)"
-  }
-fi
-if [ -d "${jbt_path}/AppCode.app" ];then
-  function appcode() {
-    "${jbt_path}/AppCode.app/Contents/MacOS/jetbrains-toolbox-launcher" "$(builtin cd "$1"; pwd)"
-  }
-fi
-if [ -d "${jbt_path}/IntelliJ IDEA Ultimate.app" ];then
-  function intellij() {
-    "${jbt_path}/IntelliJ IDEA Ultimate.app/Contents/MacOS/jetbrains-toolbox-launcher" "$(builtin cd "$1"; pwd)"
-  }
-fi
