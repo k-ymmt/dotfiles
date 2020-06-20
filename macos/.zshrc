@@ -138,7 +138,7 @@ function gr() {
 
 export FZF_DEFAULT_OPTS='--height 20%'
 
-if [ -z $TMUX ] && [ $SHLVL -eq 1 ];then 
+if [ -z $TMUX ] && [ $SHLVL -eq 1 ] && [ -n "$TERM_PROGRAM" ]; then 
   tmux attach || tmux
 fi
 
