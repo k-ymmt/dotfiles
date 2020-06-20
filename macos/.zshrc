@@ -31,6 +31,9 @@ fi
 if type nodenv >/dev/null 2>&1;then
   eval "$(nodenv init -)"
 fi
+if type rbenv >/dev/null 2>&1 && [ -d $(rbenv root)/shims ];then
+  export PATH=$(rbenv root)/shims:$PATH
+fi
 
 export NVM_DIR="$HOME/.nvm"
 if [ -d $NVM_DIR ];then
