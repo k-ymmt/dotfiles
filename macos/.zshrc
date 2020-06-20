@@ -60,6 +60,7 @@ function fh() {
   BUFFER="$buffer"
   printf '>'
   CURSOR=${#BUFFER}
+  zle reset-prompt
 }
 
 zle -N fh
