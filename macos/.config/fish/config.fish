@@ -26,7 +26,10 @@ function set_env
     source $HOME/.cargo/env
   end
   if [ (which direnv) ]
-    direnv hook fish | source
+    eval (direnv hook fish)
+  end
+  if [ (which starship) ]
+    starship init fish | source
   end
 end
 
@@ -42,12 +45,15 @@ end
 
 set -x EDITOR nvim
 
+set_env
+
 alias q="exit"
 alias r="ranger"
 
 alias ls="ls -a"
 alias tmux="tmux -u"
 alias vim="nvim"
+alias lg="lazygit"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '$HOME/bin/google-cloud-sdk/path.fish.inc' ]; . '$HOME/bin/google-cloud-sdk/path.fish.inc'; end

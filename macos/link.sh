@@ -3,6 +3,7 @@
 cd $(dirname $0)
 
 function link_home {
+  rm -rf "${HOME}/${1}"
   ln -s "$(pwd)/${1}" "${HOME}/${1}"
 }
 
