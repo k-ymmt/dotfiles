@@ -19,3 +19,5 @@ Microsoft\\VisualStudio Services/
 .config/gatsby/
 
 tmux-client-*.log
+
+.vim/pack/
