@@ -6,40 +6,48 @@ export EDITOR=nvim
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export GOPATH=$HOME/Projects/go
 
-if [ -d $HOME/bin/flutter/bin ];then
-  export PATH=$PATH:$HOME/bin/flutter/bin
-fi
-if type pyenv >/dev/null 2>&1 && [ -d $(pyenv root)/shims ];then
-  eval "$(pyenv init -)"
-  export PATH=$PATH:$(pyenv root)/shims
-fi
-if [ -d $ANDROID_HOME/tools/bin ] && [ -d $ANDROID_HONE/platform-tools ];then
-  export PATH=$PATH:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
-fi
-if [ -d $GOPATH/bin ];then
-  export PATH=$PATH:$GOPATH/bin
-fi
-if [ -f $HOME/.cargo/env ];then
-  source $HOME/.cargo/env
-fi
-if [ -d $HOME/bin ];then
-  PATH=$PATH:$HOME/bin
-fi
-if type direnv >/dev/null 2>&1;then
-  eval "$(direnv hook zsh)"
-fi
-if type nodenv >/dev/null 2>&1;then
-  eval "$(nodenv init -)"
-fi
-if type rbenv >/dev/null 2>&1 && [ -d $(rbenv root)/shims ];then
-  export PATH=$(rbenv root)/shims:$PATH
-fi
+function init() {
+  if [ -d $HOME/bin/flutter/bin ];then
+    export PATH=$PATH:$HOME/bin/flutter/bin
+  fi
+  if type pyenv >/dev/null 2>&1 && [ -d $(pyenv root)/shims ];then
+    eval "$(pyenv init -)"
+    export PATH=$PATH:$(pyenv root)/shims
+  fi
+  if [ -d $ANDROID_HOME/tools/bin ] && [ -d $ANDROID_HONE/platform-tools ];then
+    export PATH=$PATH:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
+  fi
+  if [ -d $GOPATH/bin ];then
+    export PATH=$PATH:$GOPATH/bin
+  fi
+  if [ -f $HOME/.cargo ];then
+    source $HOME/.cargo/env
+    export PATH=$PATH:$HOME/.cargo/bin
+  fi
+  if [ -d $HOME/bin ];then
+    PATH=$PATH:$HOME/bin
+  fi
+  if type direnv >/dev/null 2>&1;then
+    eval "$(direnv hook zsh)"
+  fi
+  if type nodenv >/dev/null 2>&1;then
+    eval "$(nodenv init -)"
+  fi
+  if type rbenv >/dev/null 2>&1; then
+    eval "$(rbenv init -)"
+    export PATH=$(rbenv root)/shims:$PATH
+  fi
+  
+  export NVM_DIR="$HOME/.nvm"
+  if [ -d $NVM_DIR ];then
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+  fi
 
-export NVM_DIR="$HOME/.nvm"
-if [ -d $NVM_DIR ];then
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-fi
+  if type starship >/dev/null 2>&1; then
+    eval "$(starship init zsh)"
+  fi
+}
 
 # ===Set History====
 HISTFILE=$HOME/.zsh-history
@@ -147,3 +155,6 @@ alias r='ranger'
 alias vim='nvim'
 alias q='exit'
 alias ls='ls -a'
+
+init
+
