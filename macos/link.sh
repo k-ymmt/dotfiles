@@ -13,6 +13,7 @@ link_home .zshrc
 link_home .vim
 link_home .vimrc
 link_home .gitignore_global
+link_home .gitconfig
 link_home .tigrc
 link_home "Library/Application Support/Code/User/keybindings.json"
 link_home "Library/Application Support/Code/User/settings.json"
