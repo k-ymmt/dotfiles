@@ -1,0 +1,7 @@
+[user]
+	name = k-ymmt
+	email = account@kymmt.net
+[core]
+  excludesFile = /Users/kazuki.yamamoto/.gitignore_global
+[push]
+  default = current
