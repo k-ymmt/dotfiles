@@ -1,23 +1,30 @@
 {
-    "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
-    "editor.fontLigatures": true,
-    "latex-workshop.latex.toolchain": [
-        {
-            "command": "ptex2pdf",
-            "args": [
-                "-synctex=1",
-                "-l",
-                "-ot",
-                "-kanji=utf8",
-                "-file-line-error",
-                "%DOC%"
-            ]
-        }
-    ],
-    "latex-workshop.chktex.enabled": true,
-    "window.zoomLevel": 0,
-    "workbench.colorTheme": "Gruvbox Dark (Soft)",
-    "gitlens.advanced.messages": {
-        "suppressShowKeyBindingsNotice": true
+  "editor.fontFamily" : "Fira Code, Menlo, Monaco, 'Courier New', monospace",
+  "gitlens.advanced.messages" : {
+    "suppressShowKeyBindingsNotice" : true
+  },
+  "editor.fontLigatures" : true,
+  "latex-workshop.chktex.enabled" : true,
+  "editor.tabSize" : 2,
+  "workbench.colorTheme" : "Gruvbox Dark Medium",
+  "editor.insertSpaces" : true,
+  "latex-workshop.latex.toolchain" : [
+    {
+      "command" : "ptex2pdf",
+      "args" : [
+        "-synctex=1",
+        "-l",
+        "-ot",
+        "-kanji=utf8",
+        "-file-line-error",
+        "%DOC%"
+      ]
     }
+  ],
+  "editor.accessibilitySupport": "off",
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "workbench.editor.untitled.hint": "hidden",
+  "window.zoomLevel": 2
 }
