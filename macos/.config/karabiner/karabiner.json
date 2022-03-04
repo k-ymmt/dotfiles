@@ -377,37 +377,23 @@
                         ]
                     },
                     {
-                        "description": "change window size",
+                        "description": "Change fn+hjkl to arrow keys",
                         "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "e",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "option"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "/usr/local/bin/chunkc tiling::desktop --equalize"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
                             {
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
                                         "mandatory": [
-                                            "option",
-                                            "control"
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "any"
                                         ]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/usr/local/bin/chunkc tiling::window --use-temporary-ratio -0.01 --adjust-window-edge east"
+                                        "key_code": "left_arrow"
                                     }
                                 ],
                                 "type": "basic"
@@ -417,14 +403,16 @@
                                     "key_code": "j",
                                     "modifiers": {
                                         "mandatory": [
-                                            "option",
-                                            "control"
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "any"
                                         ]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/usr/local/bin/chunkc tiling::window --use-temporary-ratio 0.01 --adjust-window-edge south"
+                                        "key_code": "down_arrow"
                                     }
                                 ],
                                 "type": "basic"
@@ -434,14 +422,16 @@
                                     "key_code": "k",
                                     "modifiers": {
                                         "mandatory": [
-                                            "option",
-                                            "control"
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "any"
                                         ]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/usr/local/bin/chunkc tiling::window --use-temporary-ratio -0.01 --adjust-window-edge south"
+                                        "key_code": "up_arrow"
                                     }
                                 ],
                                 "type": "basic"
@@ -451,225 +441,16 @@
                                     "key_code": "l",
                                     "modifiers": {
                                         "mandatory": [
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "/usr/local/bin/chunkc tiling::window --use-temporary-ratio 0.01 --adjust-window-edge east"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "h",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "option",
-                                            "control",
-                                            "shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "/usr/local/bin/chunkc tiling::window --use-temporary-ratio 0.01 --adjust-window-edge west"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "j",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "option",
-                                            "control",
-                                            "shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "/usr/local/bin/chunkc tiling::window --use-temporary-ratio -0.01 --adjust-window-edge north"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "option",
-                                            "control",
-                                            "shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "/usr/local/bin/chunkc tiling::window --use-temporary-ratio 0.01 --adjust-window-edge north"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "l",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "option",
-                                            "control",
-                                            "shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "/usr/local/bin/chunkc tiling::window --use-temporary-ratio -0.01 --adjust-window-edge west"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "config variable",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "v",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "option"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "/usr/local/bin/chunkc set bsp_split_mode vertical"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "b",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "option"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "/usr/local/bin/chunkc set bsp_split_mode horizontal"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "o",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "option"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "/usr/local/bin/chunkc set bsp_split_mode optimal"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "new terminal window",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "n",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "option"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -na Terminal.app"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "コマンドキーを単体で押したときに、英数・かなキーを送信する。（左コマンドキーは英数、右コマンドキーはかな） (rev 3)",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "left_command",
-                                    "modifiers": {
+                                            "fn"
+                                        ],
                                         "optional": [
                                             "any"
                                         ]
                                     }
                                 },
-                                "parameters": {
-                                    "basic.to_if_held_down_threshold_milliseconds": 100
-                                },
                                 "to": [
                                     {
-                                        "key_code": "left_command",
-                                        "lazy": true
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "japanese_eisuu"
-                                    }
-                                ],
-                                "to_if_held_down": [
-                                    {
-                                        "key_code": "left_command"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "right_command",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.to_if_held_down_threshold_milliseconds": 100
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_command",
-                                        "lazy": true
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "japanese_kana"
-                                    }
-                                ],
-                                "to_if_held_down": [
-                                    {
-                                        "key_code": "right_command"
+                                        "key_code": "right_arrow"
                                     }
                                 ],
                                 "type": "basic"
