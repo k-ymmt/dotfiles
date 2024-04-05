@@ -1,2 +1,4 @@
 [username]
 show_always = true
+[gcloud]
+disabled = true
