@@ -1,0 +1,4 @@
+[tools]
+node = "latest"
+watchexec = "latest"
+deno = "latest"
