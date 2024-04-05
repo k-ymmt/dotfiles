@@ -5,3 +5,5 @@
   excludesFile = /Users/kazuki.yamamoto/.gitignore_global
 [push]
   default = current
+[init]
+	defaultBranch = main
