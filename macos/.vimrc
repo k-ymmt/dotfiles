@@ -9,6 +9,7 @@ set mouse=a
 set hlsearch
 set showtabline=2
 set list listchars=tab:\~\>
+set number
 
 tnoremap <silent> <ESC> <C-\><C-n>
 
