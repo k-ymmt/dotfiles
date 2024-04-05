@@ -33,10 +33,6 @@ function init() {
   if type nodenv >/dev/null 2>&1;then
     eval "$(nodenv init -)"
   fi
-  if type rbenv >/dev/null 2>&1; then
-    eval "$(rbenv init -)"
-    export PATH=$(rbenv root)/shims:$PATH
-  fi
   
   export NVM_DIR="$HOME/.nvm"
   if [ -d $NVM_DIR ];then
@@ -50,7 +46,7 @@ function init() {
 }
 
 # ===Set History====
-HISTFILE=$HOME/.zsh-history
+HISTFILE="$HOME/.zsh-history"
 HISTSIZE=10000
 SAVEHIST=100000
 
@@ -133,17 +129,7 @@ zplug load
 export ENHANCD_HOOK_AFTER_CD="ls -a"
 export ENHANCD_FILTER=fzf
 
-
-function gr() {
-  ghq list | fzf --select-1 --exit-0 | read repo_name
-
-  if [ ! $repo_name ];then
-    return
-  fi
-
-  cd "$(ghq root)/$repo_name"
-}
-
+source $HOME/.config/zsh/init.zsh
 
 export FZF_DEFAULT_OPTS='--height 20%'
 
@@ -158,3 +144,10 @@ alias ls='ls -a'
 
 init
 
+if [[ -z $TMUX ]] && [[ $SHLVL -eq 1 ]] && [ -n "$TERM_PROGRAM" ]; then 
+  tmux attach || tmux
+fi
+
+# mise
+eval "$(mise activate zsh)"
+eval "$(mise activate zsh --shims)"
