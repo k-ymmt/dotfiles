@@ -5,6 +5,7 @@ export EDITOR=nvim
 
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export GOPATH=$HOME/Projects/go
+export DENO_TLS_CA_STORE="system"
 
 function init() {
   if [ -d $HOME/bin/flutter/bin ];then
@@ -42,6 +43,14 @@ function init() {
 
   if type starship >/dev/null 2>&1; then
     eval "$(starship init zsh)"
+  fi
+
+  if type rbenv >/dev/null 2>&1;then
+    eval "$(rbenv init -)"
+  fi
+
+  if type deno >/dev/null 2>&1;then
+    export DENO_TLS_CA_STORE=system 
   fi
 }
 

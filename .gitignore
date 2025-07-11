@@ -1,3 +1,6 @@
 .DS_Store
 macos/.vim/bundle/
 macos/.vim/plugged/
+macos/.config/github-copilot/
+macos/.config/raycast/
+macos/.config/swiftpm/
