@@ -1,3 +1,6 @@
+tap "homebrew/bundle"
+tap "FelixKratz/formulaebrew"
+
 brew "ffmpeg"
 brew "imagemagick"
 brew "fzf"
@@ -10,4 +13,6 @@ brew "ranger"
 brew "starship"
 brew "tmux"
 brew "mise"
+brew "sketchybar"
+brew "borders"
 cask "font-fira-code"

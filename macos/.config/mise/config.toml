@@ -2,3 +2,13 @@
 node = "latest"
 watchexec = "latest"
 deno = "latest"
+usage = "latest"
+sourcery = "latest"
+rust = "latest"
+"npm:@anthropic-ai/claude-code" = "latest"
+"npm:@openai/codex" = "latest"
+pnpm = "latest"
+"github:tuist/argus" = "latest"
+
+[settings]
+experimental = true

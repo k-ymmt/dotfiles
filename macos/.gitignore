@@ -21,3 +21,6 @@ Microsoft\\VisualStudio Services/
 tmux-client-*.log
 
 .vim/pack/
+
+.config/git
+.config/jgit

@@ -123,7 +123,7 @@ source ~/.zplug/init.zsh
 
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
-zplug "b4b4r07/enhancd", use:init.sh
+# zplug "b4b4r07/enhancd", use:init.sh
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 if ! zplug check --verbose; then
@@ -160,3 +160,4 @@ fi
 # mise
 eval "$(mise activate zsh)"
 eval "$(mise activate zsh --shims)"
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
