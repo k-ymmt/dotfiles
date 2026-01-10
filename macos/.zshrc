@@ -123,7 +123,6 @@ source ~/.zplug/init.zsh
 
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
-# zplug "b4b4r07/enhancd", use:init.sh
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 if ! zplug check --verbose; then
@@ -142,10 +141,6 @@ source $HOME/.config/zsh/init.zsh
 
 export FZF_DEFAULT_OPTS='--height 20%'
 
-if [ -z $TMUX ] && [ $SHLVL -eq 1 ] && [ -n "$TERM_PROGRAM" ]; then 
-  tmux attach || tmux
-fi
-
 alias r='ranger'
 alias vim='nvim'
 alias q='exit'
@@ -153,11 +148,30 @@ alias ls='ls -a'
 
 init
 
-if [[ -z $TMUX ]] && [[ $SHLVL -eq 1 ]] && [ -n "$TERM_PROGRAM" ]; then 
-  tmux attach || tmux
-fi
+# if [[ -z $TMUX ]] && [[ $SHLVL -eq 1 ]] && [ -n "$TERM_PROGRAM" ]; then 
+#   tmux attach || tmux
+# fi
 
 # mise
 eval "$(mise activate zsh)"
 eval "$(mise activate zsh --shims)"
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
+if [ -f "$HOME/Documents/cato.cer" ];then
+  export NODE_EXTRA_CA_CERTS="$HOME/Documents/cato.cer"
+fi
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /Users/kazuki.yamamoto/.dart-cli-completion/zsh-config.zsh ]] && . /Users/kazuki.yamamoto/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
+eval "$(atuin init zsh)"
+eval "$(zoxide init zsh)"
+
+if type carapace >/dev/null 2>&1;then
+  autoload -U compinit && compinit
+  export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
+  zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+  source <(carapace _carapace)
+fi
+
