@@ -1,0 +1,5 @@
+[[plugin]]
+name = "rich-prompt-plugin"
+source = "github:k-ymmt/rich-prompt-plugin"
+version = "0.4.0"
+enabled = true
