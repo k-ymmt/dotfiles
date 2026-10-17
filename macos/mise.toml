@@ -1,0 +1,69 @@
+# macOS bootstrap config. Run from this directory:
+#   mise trust && mise bootstrap --dry-run && mise bootstrap
+# See ../README.md for the full procedure.
+
+[bootstrap.packages]
+"brew:ffmpeg" = "latest"
+"brew:imagemagick" = "latest"
+"brew:fzf" = "latest"
+"brew:gh" = "latest"
+"brew:ghq" = "latest"
+"brew:git-lfs" = "latest"
+"brew:jq" = "latest"
+"brew:neovim" = "latest"
+"brew:ranger" = "latest"
+"brew:starship" = "latest"
+"brew:tmux" = "latest"
+"brew:zellij" = "latest"
+"brew:atuin" = "latest"
+"brew:zoxide" = "latest"
+"brew:FelixKratz/formulae/sketchybar" = "latest"
+"brew:FelixKratz/formulae/borders" = "latest"
+"brew-cask:font-fira-code" = "latest"
+"brew-cask:ghostty" = "latest"
+
+# Vim plugins are cloned inside this repo (.vim/pack/ is gitignored).
+# Paths are relative to this directory on purpose: the repos step runs before
+# the dotfiles step, so "~/.vim/..." would create a real directory before the
+# ~/.vim symlink exists.
+[bootstrap.repos]
+".vim/pack/dev/start/vim-gitgutter" = { url = "https://github.com/airblade/vim-gitgutter.git" }
+".vim/pack/dev/start/vim-airline" = { url = "https://github.com/vim-airline/vim-airline.git" }
+"~/.zplug" = { url = "https://github.com/zplug/zplug.git" }
+
+# Symlinks into $HOME (same layout as this directory).
+[dotfiles]
+"~/.config" = { source = ".config" }
+"~/.tmux.conf" = { source = ".tmux.conf" }
+"~/.zshrc" = { source = ".zshrc" }
+"~/.vim" = { source = ".vim" }
+"~/.vimrc" = { source = ".vimrc" }
+"~/.gitignore_global" = { source = ".gitignore_global" }
+"~/.gitconfig" = { source = ".gitconfig" }
+"~/.tigrc" = { source = ".tigrc" }
+"~/Library/Application Support/Code/User/keybindings.json" = { source = "Library/Application Support/Code/User/keybindings.json" }
+"~/Library/Application Support/Code/User/settings.json" = { source = "Library/Application Support/Code/User/settings.json" }
+"~/Library/Developer/Xcode/UserData/FontAndColorThemes/gruvbox.xccolortheme" = { source = "gruvbox.xccolortheme" }
+
+# defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+[bootstrap.macos.keyboard]
+press_and_hold = false
+
+[bootstrap.hooks]
+post-defaults = "killall SystemUIServer || true"
+
+# Runs last, every time. Everything here must be safe to repeat.
+# - The screenshot locations stay here because [bootstrap.macos.defaults]
+#   values are not templated, so "$HOME" cannot be expanded there.
+# - The Minimize key equivalent stores a NUL character, which mise cannot
+#   serialize (`mise bootstrap macos defaults status` fails), so it stays a
+#   plain `defaults write`.
+[tasks.bootstrap]
+run = [
+  "defaults write -g NSUserKeyEquivalents -dict-add 'Minimize' '\\0'",
+  'install -d "$HOME/Pictures/Screenshots"',
+  'defaults write com.apple.screencapture location "$HOME/Pictures/Screenshots"',
+  'defaults write com.apple.iphonesimulator ScreenShotSaveLocation -string "$HOME/Pictures/Screenshots"',
+  'nvim --headless -u NONE -c "helptags .vim/pack/dev/start/vim-gitgutter/doc" -c q',
+  'nvim --headless -u NONE -c "helptags .vim/pack/dev/start/vim-airline/doc" -c q',
+]

@@ -175,3 +175,5 @@ if type carapace >/dev/null 2>&1;then
   source <(carapace _carapace)
 fi
 
+# Homebrew prefix (mise bootstrap installs formulae here without brew shellenv)
+export PATH="/opt/homebrew/bin:$PATH"
