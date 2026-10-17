@@ -25,3 +25,19 @@ tmux-client-*.log
 .config/git/*
 !.config/git/ignore
 .config/jgit
+
+# gh login state (token lives in Keychain, but this is per machine)
+.config/gh/hosts.yml
+
+# yosh: plugins.toml is tracked, the lock has machine-specific build info
+.config/yosh/plugins.lock
+
+# 1Password app state
+.config/1Password/
+
+# herdr runtime files (config.toml is tracked)
+.config/herdr/.plugins.lock
+.config/herdr/*.log
+.config/herdr/*.sock*
+.config/herdr/session.json
+.config/herdr/session-snapshots/
