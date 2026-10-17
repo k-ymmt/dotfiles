@@ -36,6 +36,7 @@
 "~/.config" = { source = ".config" }
 "~/.tmux.conf" = { source = ".tmux.conf" }
 "~/.zshrc" = { source = ".zshrc" }
+"~/.yoshrc" = { source = ".yoshrc" }
 "~/.vim" = { source = ".vim" }
 "~/.vimrc" = { source = ".vimrc" }
 "~/.gitignore_global" = { mode = "absent" }  # moved to ~/.config/git/ignore (git default)
