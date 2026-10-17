@@ -9,6 +9,8 @@ rust = "latest"
 "npm:@openai/codex" = "latest"
 pnpm = "latest"
 "github:tuist/argus" = "latest"
+herdr = "latest"
+"github:yonaskolb/mint" = "latest"
 
 [settings]
 experimental = true
