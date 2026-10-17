@@ -3,3 +3,5 @@
 .envrc
 .swift-format
 .worktrees
+mise.local.toml
+

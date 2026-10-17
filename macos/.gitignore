@@ -22,5 +22,6 @@ tmux-client-*.log
 
 .vim/pack/
 
-.config/git
+.config/git/*
+!.config/git/ignore
 .config/jgit

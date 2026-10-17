@@ -38,7 +38,7 @@
 "~/.zshrc" = { source = ".zshrc" }
 "~/.vim" = { source = ".vim" }
 "~/.vimrc" = { source = ".vimrc" }
-"~/.gitignore_global" = { source = ".gitignore_global" }
+"~/.gitignore_global" = { mode = "absent" }  # moved to ~/.config/git/ignore (git default)
 "~/.gitconfig" = { source = ".gitconfig" }
 "~/.tigrc" = { source = ".tigrc" }
 "~/Library/Application Support/Code/User/keybindings.json" = { source = "Library/Application Support/Code/User/keybindings.json" }
