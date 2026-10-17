@@ -179,6 +179,39 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "Cmd+Shift+V to Spotlight Clipboard History",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "v",
+                                    "modifiers": { "mandatory": ["command", "shift"] }
+                                },
+                                "parameters": { "basic.to_delayed_action_delay_milliseconds": 200 },
+                                "to": [
+                                    {
+                                        "key_code": "spacebar",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
+                                "to_delayed_action": {
+                                    "to_if_canceled": [
+                                        {
+                                            "key_code": "4",
+                                            "modifiers": ["left_command"]
+                                        }
+                                    ],
+                                    "to_if_invoked": [
+                                        {
+                                            "key_code": "4",
+                                            "modifiers": ["left_command"]
+                                        }
+                                    ]
+                                },
+                                "type": "basic"
+                            }
+                        ]
                     }
                 ]
             },
