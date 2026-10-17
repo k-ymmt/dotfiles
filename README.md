@@ -10,33 +10,29 @@ installed in the same run.
 
 ### New machine
 
-1. Install mise (Homebrew is not needed; mise installs formulae itself).
+```sh
+curl -fsSL https://raw.githubusercontent.com/k-ymmt/dotfiles/master/macos/setup.sh | bash
+```
 
-   ```sh
-   curl https://mise.run | sh
-   export PATH="$HOME/.local/bin:$PATH"
-   ```
+[`macos/setup.sh`](macos/setup.sh) installs the Xcode Command Line Tools and
+mise, clones this repository into `~/Projects/dotfiles`, then runs
+`mise bootstrap`. Homebrew is not needed; mise installs formulae itself.
+Every step is skipped when already done, so re-run the same line after a
+failure.
 
-2. Clone this repository and preview the run.
+Extra arguments go to `mise bootstrap`:
 
-   ```sh
-   git clone https://github.com/k-ymmt/dotfiles ~/Projects/dotfiles
-   cd ~/Projects/dotfiles/macos
-   mise trust
-   mise bootstrap --dry-run
-   ```
+```sh
+curl -fsSL https://raw.githubusercontent.com/k-ymmt/dotfiles/master/macos/setup.sh | bash -s -- --dry-run
+curl -fsSL https://raw.githubusercontent.com/k-ymmt/dotfiles/master/macos/setup.sh | bash -s -- --force-dotfiles
+```
 
-3. Apply.
+Use `--force-dotfiles` when `$HOME` already has real files where symlinks
+should go (for example `~/.zshrc`).
 
-   ```sh
-   mise bootstrap
-   ```
-
-   If `$HOME` already has real files where symlinks should go (for example
-   `~/.zshrc`), add `--force-dotfiles` to replace them.
-
-4. Open a new shell. `.zshrc` adds `/opt/homebrew/bin` and `~/.local/bin` to
-   `PATH` and activates mise.
+Afterwards open a new shell (`.zshrc` adds `/opt/homebrew/bin` and
+`~/.local/bin` to `PATH` and activates mise) and run `gh auth login`, which
+the git credential helper in `.gitconfig` relies on.
 
 ### Day to day
 
