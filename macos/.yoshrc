@@ -1,3 +1,7 @@
+# Homebrew. Pass `sh` explicitly: without it brew guesses the parent shell
+# and may emit zsh-only syntax.
+eval "$(/opt/homebrew/bin/brew shellenv sh)"
+
 # mise: put globally installed tools (~/.config/mise/config.toml) on PATH.
 # `mise activate` has no yosh support, so use the shims directory instead.
 export PATH="${MISE_DATA_DIR:-$HOME/.local/share/mise}/shims:$PATH"
